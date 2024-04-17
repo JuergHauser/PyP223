@@ -9,9 +9,9 @@ import ctypes
 class LeroiAir():
     def __init__(self):
         if 'mac' in platform.platform():
-            self.p223=ctypes.cdll.LoadLibrary(os.getcwd()+'/'+glob.glob("p223.*.dylib")[0])
+            self.p223=ctypes.cdll.LoadLibrary(glob.glob(os.path.dirname(__file__)+"/p223*.dylib")[0])
         else:
-            self.p223=ctypes.cdll.LoadLibrary(os.getcwd()+'/'+glob.glob("p223.*.so")[0])
+            self.p223=ctypes.cdll.LoadLibrary(glob.glob(os.path.dirname(__file__)+"/p223*.so")[0])
 
     def formod_tempest_data(self,nlyr,nstat,res,pbres,thk,nplt,peast,pnorth,ptop,pres,
                                          plngth1,plngth2,pwdth1,pwdth2,pthk,cellw,

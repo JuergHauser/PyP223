@@ -1,6 +1,6 @@
 !
 ! https://gitlab.com/jrh/wiglaf
-!  murchison-30-g27ed453719e-dirty
+!  murchison-35-g31bf70bd6a1-dirty
 !
 ! external/p223/clibleroiair.f90
 !
@@ -40,7 +40,7 @@
 ! The orignal copy right notice and documentation for LeroiAir is in libleroiair.f90
 
   module leroiair
-
+  
   contains
 
   subroutine get_rotation_matrix_rx(alpha,rx)
@@ -241,7 +241,7 @@
          GSTRP=0,ASTRP=0,KNRM=3
     INTEGER NFRQ
     REAL,ALLOCATABLE :: FREQ(:)
-    REAL,PARAMETER :: SWX(1)=0.0,SWY(3)=(/1.,2.,0./),PULSE=2.0E-2
+    REAL,PARAMETER :: SWX(1)=0.0,SWY(3)=(/1.,0.,0./),PULSE=2.0E-2
     REAL,PARAMETER :: NORM(3) =(/1E6,1E6,1E6 /)
 
 
@@ -388,7 +388,7 @@
          GSTRP=0,ASTRP=0,KNRM=3
     INTEGER NFRQ
     REAL,ALLOCATABLE :: FREQ(:)
-    REAL,PARAMETER :: SWX(1)=0.0,SWY(3)=(/1.,2.,0./),PULSE=2.0E-2
+    REAL,PARAMETER :: SWX(1)=0.0,SWY(3)=(/1.,0.,0./),PULSE=2.0E-2
     REAL,PARAMETER :: NORM(3) =(/1E6,1E6,1E6 /)
 
 
@@ -729,7 +729,6 @@
     REAL, PARAMETER :: PI=3.141592654
     REAL NSHFT,ESHFT
 
-
 	ijac=0
 
      if (ampt==0) then
@@ -749,9 +748,7 @@
     PULSE=SWX(NSX)
 
     CALL SET_TRP2(NPULS,PULSE,nchnl,TOPN,nsx,SWX,NTYPLS,NTYRP,TRP)
-
     CALL DCPRM_TD (trdx(1),trdy(1),trdz(1),tincl(1)/PI*180,txarea,PRM_TD)
-	
 
     ! HSBOSS_TD and LEROI_3D use different geometries!!!!!!
     CALL GET_ORIGIN_SHIFT(pnorth_,peast_,NPLT,NSHFT,ESHFT)
@@ -940,8 +937,14 @@
     SAME_TX=.TRUE.
     SAME_TX(1)=.FALSE.
 
+
     CALL SET_FRQ2(NFRQ,FREQ,TOPN,SWX,NSX)
     CALL SET_SOURCE (STEP,ISW,BFFAC,WAVEFORM,NSX,SWX,SWY,PRM_TD)
+
+
+
+
+
 
     call FORJAC2 (nlyr,res,pbres,thk, &
          NPLT,pres,plngth1,plngth2,pwdth1,pwdth2,pthk,peast,pnorth,ptop,pdzm,pdip,plng, &
@@ -2874,9 +2877,6 @@
     CALL GET_FWD_MODL(LP,PARFAC)
     XMODL0 = XMODL
 
-
-
-
     !XYNORM = (SUM (SZ) + SUM(RZ) )/ REAL (2*NSTAT)
     !XYNORM = sum(sqrt(xrx*xrx+yrx*yrx))/REAL (NSTAT)
     !  Initialise and then compute the Jacobian as the derivative of log(volts) wrt
@@ -3157,7 +3157,7 @@
       !print *,'>>>>',JP,LP
       !print *,">>>>",nstat
 
-
+	   !print *,ijac(12),ABS(PLUNJ)
       if (ijac(12)==0 .AND. ALL(ABS(PLUNJ)<1e-3)) then
 
             CALL LEROI_3D_adv (TDFD,NFRQ,FREQ,NLYR,THK,RES,PBRES,RMU,REPS,CALF,CTAU,CFREQ,NPLT,MXAB,  &
@@ -3201,6 +3201,10 @@
          CALL HSBOSS_TD_adv (STEP,IDER,NSX,SWX,SWY,NPULS,PULSE,NTYPLS,NTYRP,TRP,NCHNL,TOPN, &
               TCLS,TXCLN,NSTAT,SZ,ZRX,XRX,YRX,NLYR,RES,REPS,RMU,THK, &
               CALF,CTAU,CFREQ,GSTRP,ASTRP,BTD)
+
+        ! call PRINT_HSBOSS_TD_VARS (STEP,IDER,NSX,SWX,SWY,NPULS,PULSE,NTYPLS,NTYRP,TRP,NCHNL,TOPN, &
+        ! TCLS,TXCLN,NSTAT,SZ,ZRX,XRX,YRX,NLYR,RES,REPS,RMU,THK, &
+        ! CALF,CTAU,CFREQ,GSTRP,ASTRP,BTD)
 
          BTD = BTD + BTD_SCAT
 
@@ -3300,9 +3304,7 @@
          END DO
       END IF
 
-!call PRINT_HSBOSS_TD_VARS (STEP,IDER,NSX,SWX,SWY,NPULS,PULSE,NTYPLS,NTYRP,TRP,NCHNL,TOPN, &
-!       TCLS,TXCLN,NSTAT,SZ,ZRX,XRX,YRX,NLYR,RES,REPS,RMU,THK, &
-!       CALF,CTAU,CFREQ,GSTRP,ASTRP,BTD)
+
 
     END SUBROUTINE GET_FWD_MODL
 
