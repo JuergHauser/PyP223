@@ -1,6 +1,6 @@
 !
 ! https://gitlab.com/jrh/wiglaf
-!  murchison-35-g31bf70bd6a1-dirty
+!  murchison-35-g785ffede25b-dirty
 !
 ! external/p223/libfranken.f90
 !
