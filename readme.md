@@ -15,7 +15,7 @@ formod_tempest_data(nlyr,nstat,...)
 formod_vtem_max_data(nlyr,nstat,...)
 ```
 
-See `demos/verification` for the comparisons between  results obtained with the functions provided here and computation perforemd with LeroiAir.
+See `demos/verification` for the comparisons between results obtained with the functions provided here and computations perforemd with LeroiAir.
 
 ## Installation
 ```
