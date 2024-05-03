@@ -1,22 +1,22 @@
- Copyright (C) 2017 CSRIO
-!
-! This file is part of PyP223
-!
-! PyP223 is free software: you can redistribute it and/or modify
-! it under the terms of the GNU General Public License Version 2
-! as published by the Free Software Foundation.
-!
-! PyP223 is distributed in the hope that it will be useful,
-! but WITHOUT ANY WARRANTY; without even the implied warranty of
-! MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-! GNU General Public License for more details.
-!
-! You should have received a copy of the GNU General Public License
-! along with PyP223. If not, see <http://www.gnu.org/licenses/>.
-!
-! To contact CSIRO about this software you can e-mail
-! juerg.hauser@csiro.au
+"""Copyright (C) 2017 CSRIO
 
+This file is part of PyP223
+
+PyP223 is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License Version 2
+as published by the Free Software Foundation.
+
+PyP223 is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with PyP223. If not, see <http://www.gnu.org/licenses/>.
+
+To contact CSIRO about this software you can e-mail
+juerg.hauser@csiro.au
+"""
 
 
 import os
@@ -28,10 +28,7 @@ import ctypes
 
 class LeroiAir():
     def __init__(self):
-        if 'mac' in platform.platform():
-            self.p223=ctypes.cdll.LoadLibrary(glob.glob(os.path.dirname(__file__)+"/p223*.dylib")[0])
-        else:
-            self.p223=ctypes.cdll.LoadLibrary(glob.glob(os.path.dirname(__file__)+"/p223*.so")[0])
+        self.p223=ctypes.cdll.LoadLibrary(glob.glob(os.path.dirname(__file__)+"/p223*.so")[0])
 
     def formod_tempest_data(self,nlyr,nstat,res,pbres,thk,nplt,peast,pnorth,ptop,pres,
                                          plngth1,plngth2,pwdth1,pwdth2,pthk,cellw,
