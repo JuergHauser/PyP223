@@ -1,6 +1,6 @@
 !
 ! https://gitlab.com/jrh/wiglaf
-!  murchison-35-g785ffede25b-dirty
+!  murchison-59-g41547587c2d-dirty
 !
 ! external/p223/libfranken.f90
 !
@@ -8,17 +8,16 @@
 !
 ! This file is part of wiglaf
 !
-! wiglaf is free software: you can redistribute it and/or modify
-! it under the terms of the GNU General Public License Version 2
-! as published by the Free Software Foundation.
+! Wiglaf is free software: you can redistribute it and/or modify it under the terms of 
+! the GNU General Public License as published by the Free Software Foundation, either 
+! version 3 of the License, or (at your option) any later version.
 !
-! wiglaf is distributed in the hope that it will be useful,
-! but WITHOUT ANY WARRANTY; without even the implied warranty of
-! MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-! GNU General Public License for more details.
+! Wiglaf is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
+! without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+! PURPOSE. See the GNU General Public License for more details.
 !
-! You should have received a copy of the GNU General Public License
-! along with wiglaf. If not, see <http://www.gnu.org/licenses/>.
+! You should have received a copy of the GNU General Public License along with wiglaf. 
+! If not, see <https://www.gnu.org/licenses/>.
 !
 ! To contact CSIRO about this software you can e-mail
 ! juerg.hauser@csiro.au
@@ -10501,9 +10500,9 @@ contains
 
 end module franken_subroutines
 
-module print_franken_variables
+module dump_franken_variables
 contains
-SUBROUTINE print_franken_LEROI_3D_vars (IPR,NFRQ,FREQ,SOURCE_TYPE,NTX,MXVRTX,NVRTX,SXN,SXE,SXZ,SXDIP,SXAZM,NRXTX, &
+SUBROUTINE dump_franken_LEROI_3D_vars (IPR,NFRQ,FREQ,SOURCE_TYPE,NTX,MXVRTX,NVRTX,SXN,SXE,SXZ,SXDIP,SXAZM,NRXTX, &
      MRXTX,RXID,MQVR,MXRS,XRXTX,YRXTX,ZRXTX,NLYR,THKD,RES,RMUD,REPS,CHRG,CTAU, &
      CFREQ,NPLT,MXAB,CELLW,PLNGTH,PLWDTH,XCNTR,YCNTR,PLTOP,PLAZM,PLDIP,PLUNJ,  &
      INTRUDE,SIG_T,CHRGP,CTAUP,CFREQP,MXRHO,RHOTRP,INVERT,BFD_SCAT)
@@ -10642,6 +10641,6 @@ SUBROUTINE print_franken_LEROI_3D_vars (IPR,NFRQ,FREQ,SOURCE_TYPE,NTX,MXVRTX,NVR
   write(102,*) 'BFD_SCAT',BFD_SCAT
 
 
-end subroutine print_franken_leroi_3d_vars
+end subroutine dump_franken_leroi_3d_vars
 
-end module print_franken_variables
+end module dump_franken_variables

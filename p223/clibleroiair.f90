@@ -1,6 +1,6 @@
 !
 ! https://gitlab.com/jrh/wiglaf
-!  murchison-35-g785ffede25b-dirty
+!  murchison-59-g41547587c2d-dirty
 !
 ! external/p223/clibleroiair.f90
 !
@@ -8,17 +8,16 @@
 !
 ! This file is part of wiglaf
 !
-! wiglaf is free software: you can redistribute it and/or modify
-! it under the terms of the GNU General Public License Version 2
-! as published by the Free Software Foundation.
+! Wiglaf is free software: you can redistribute it and/or modify it under the terms of 
+! the GNU General Public License as published by the Free Software Foundation, either 
+! version 3 of the License, or (at your option) any later version.
 !
-! wiglaf is distributed in the hope that it will be useful,
-! but WITHOUT ANY WARRANTY; without even the implied warranty of
-! MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-! GNU General Public License for more details.
+! Wiglaf is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
+! without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+! PURPOSE. See the GNU General Public License for more details.
 !
-! You should have received a copy of the GNU General Public License
-! along with wiglaf. If not, see <http://www.gnu.org/licenses/>.
+! You should have received a copy of the GNU General Public License along with wiglaf. 
+! If not, see <https://www.gnu.org/licenses/>.
 !
 ! To contact CSIRO about this software you can e-mail
 ! juerg.hauser@csiro.au
@@ -2059,7 +2058,7 @@
     ! a(nchnl*2nlyr*2-1) - Jacobian
     use iso_c_binding
         use leroiair_subroutines
-    !   use print_leroiair_vars
+    !   use dump_leroiair_vars
 
     implicit none
     integer (kind=c_int)  nlyr
@@ -2131,7 +2130,7 @@
     CALL SET_TRP2(NPULS,PULSE,nchnl,TOPN,nsx,SWX,NTYPLS,NTYRP,TRP)
     CALL DCPRM_TD (trdx(1),trdy(1),trdz(1),tincl(1)/PI*180,txarea,PRM_TD)
 
-    !call PRINT_DCPRM_TD_VARS(trdx(1),trdy(1),trdz(1),tincl(1)/PI*180,txarea,PRM_TD)
+    !call DUMP_DCPRM_TD_VARS(trdx(1),trdy(1),trdz(1),tincl(1)/PI*180,txarea,PRM_TD)
     ! HSBOSS_TD and LEROI_3D use different geometries!!!!!!
     CALL GET_ORIGIN_SHIFT(pnorth_,peast_,NPLT,NSHFT,ESHFT)
 
@@ -2178,7 +2177,7 @@
 
     CALL SET_FRQ2(NFRQ,FREQ,TOPN,SWX,NSX)
     CALL SET_SOURCE (STEP,ISW,BFFAC,WAVEFORM,NSX,SWX,SWY,PRM_TD)
- ! CALL PRINT_SET_SOURCE_VARS (STEP,ISW,BFFAC,WAVEFORM,NSX,SWX,SWY,PRM_TD)
+ ! CALL DUMP_SET_SOURCE_VARS (STEP,ISW,BFFAC,WAVEFORM,NSX,SWX,SWY,PRM_TD)
 
     call FORJAC2 (nlyr,res,pbres,thk, &
          NPLT,pres,plngth1,plngth2,pwdth1,pwdth2,pthk,peast,pnorth,ptop,pdzm,pdip,plng, &
@@ -2815,7 +2814,7 @@
 
           use leroiair_subroutines
       use franken_subroutines
-    !   use print_leroiair_vars
+    !   use dump_leroiair_vars
 
     IMPLICIT NONE
     REAL, PARAMETER :: PI=3.141592654
@@ -3174,7 +3173,7 @@
       end if
 
 
-!CALL PRINT_LEROI_3D_VARS (TDFD,NFRQ,FREQ,NLYR,THK,RES,RMU,REPS,CALF,CTAU,CFREQ,NPLT,MXAB,  &
+!CALL DUMP_LEROI_3D_VARS (TDFD,NFRQ,FREQ,NLYR,THK,RES,RMU,REPS,CALF,CTAU,CFREQ,NPLT,MXAB,  &
 !       MXB,NB,NA,DA,DB,XCELL,YCELL,ZCELL,PLTOP,PLWDTH,PLNGTH,XCNTR,YCNTR, &
 !       PLAZM,PLDIP,SIG_T,CALFP,CTAUP,CFREQP,NSTAT,FANGLE,SX,SY,SZ,TXCLN,  &
 !       TXA90,SAME_TX,NRX,NRXST,RX,RY,RZ,BFD_SCAT,leroiair_failure_count)
@@ -3202,7 +3201,7 @@
               TCLS,TXCLN,NSTAT,SZ,ZRX,XRX,YRX,NLYR,RES,REPS,RMU,THK, &
               CALF,CTAU,CFREQ,GSTRP,ASTRP,BTD)
 
-        ! call PRINT_HSBOSS_TD_VARS (STEP,IDER,NSX,SWX,SWY,NPULS,PULSE,NTYPLS,NTYRP,TRP,NCHNL,TOPN, &
+        ! call DUMP_HSBOSS_TD_VARS (STEP,IDER,NSX,SWX,SWY,NPULS,PULSE,NTYPLS,NTYRP,TRP,NCHNL,TOPN, &
         ! TCLS,TXCLN,NSTAT,SZ,ZRX,XRX,YRX,NLYR,RES,REPS,RMU,THK, &
         ! CALF,CTAU,CFREQ,GSTRP,ASTRP,BTD)
 
@@ -3728,7 +3727,7 @@
           !WRITE(NW,3)
           !WRITE(*,3)
           leroiair_failure_count=leroiair_failure_count+1
-       !   CALL PRINT_FAILED_MODEL (NLYR,RES,THK,CALF,CTAU,CFREQ,RMU,REPS,NPLT,PLNGTH,PLWDTH, &
+       !   CALL DUMP_FAILED_MODEL (NLYR,RES,THK,CALF,CTAU,CFREQ,RMU,REPS,NPLT,PLNGTH,PLWDTH, &
        !        SIG_T,CALFP,CTAUP,CFREQP,XCNTR,YCNTR,PLTOP,PLAZM,PLDIP)
           RETURN
        END IF
@@ -3767,7 +3766,7 @@
     !         /T3,'The model leading to this crash is Described in LeroiAir.out.' &
     !         /T3,'COMPUTATION HALTED.  SEEK HELP.  (art.raiche@csiro.au)')
     !!
-    !    CALL PRINT_LEROI_3D_VARS (TDFD,NFRQ,FREQ,NLYR,THK,RES,RMU,REPS,CALF,CTAU,CFREQ,NPLT,MXAB,  &
+    !    CALL DUMP_LEROI_3D_VARS (TDFD,NFRQ,FREQ,NLYR,THK,RES,RMU,REPS,CALF,CTAU,CFREQ,NPLT,MXAB,  &
     !           MXB,NB,NA,DA,DB,XCELL,YCELL,ZCELL,PLTOP,PLWDTH,PLNGTH,XCNTR,YCNTR, &
     !           PLAZM,PLDIP,SIG_T,CALFP,CTAUP,CFREQP,NSTAT,FANGLE,SX,SY,SZ,TXCLN,  &
     !           TXA90,SAME_TX,NRX,NRXST,RX,RY,RZ,BFD_SCAT,leroiair_failure_count)
@@ -3922,7 +3921,7 @@
        !END IF
     END DO
 
-!CALL PRINT_HSBOSS_TD_VARS (STEP,IDER,NSX,SWX,SWY,NPULS,PULSE,NTYPLS,NTYRP,TRP,NCHNL,TOPN, &
+!CALL DUMP_HSBOSS_TD_VARS (STEP,IDER,NSX,SWX,SWY,NPULS,PULSE,NTYPLS,NTYRP,TRP,NCHNL,TOPN, &
 !       TCLS,TXCLN,NSTAT,SZ,ZRX,XRX,YRX,NLYR,RES,REPS,RMU,THK, &
 !       CALF,CTAU,CFREQ,GSTRP,ASTRP,BTD)
 

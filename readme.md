@@ -15,7 +15,7 @@ formod_tempest_data(nlyr,nstat,...)
 formod_vtem_max_data(nlyr,nstat,...)
 ```
 
-See `demos/verification` for the comparisons between results obtained with the functions provided here and computations perforemd with LeroiAir.
+See `demos/verification` for the comparisons between  results obtained with the functions provided here and computation perforemd with LeroiAir.
 
 ## Installation
 ```
@@ -23,7 +23,7 @@ pip install .
 ```
 
 ## Licensing
-PyP223 is released under the GNU General Public License version 2.
+PyP223 is released as  GPL-3.0-or-later.
 
 ### References
 Hauser, J., Gunning, J., & Annetts, D. (2016). Probabilistic inversion of airborne electromagnetic data for basement conductors. Geophysics, 81(5), E389-E400.

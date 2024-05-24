@@ -1,6 +1,6 @@
 !
 ! https://gitlab.com/jrh/wiglaf
-! murchison-35-g785ffede25b-dirty
+! murchison-59-g41547587c2d-dirty
 !
 ! external/p223/libleroiair.f90
 !
@@ -8,17 +8,16 @@
 !
 ! This file is part of wiglaf
 !
-! wiglaf is free software: you can redistribute it and/or modify
-! it under the terms of the GNU General Public License Version 2
-! as published by the Free Software Foundation.
+! Wiglaf is free software: you can redistribute it and/or modify it under the terms of 
+! the GNU General Public License as published by the Free Software Foundation, either 
+! version 3 of the License, or (at your option) any later version.
 !
-! wiglaf is distributed in the hope that it will be useful,
-! but WITHOUT ANY WARRANTY; without even the implied warranty of
-! MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-! GNU General Public License for more details.
+! Wiglaf is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
+! without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+! PURPOSE. See the GNU General Public License for more details.
 !
-! You should have received a copy of the GNU General Public License
-! along with wiglaf. If not, see <http://www.gnu.org/licenses/>.
+! You should have received a copy of the GNU General Public License along with wiglaf. 
+! If not, see <https://www.gnu.org/licenses/>.
 !
 ! To contact CSIRO about this software you can e-mail
 ! juerg.hauser@csiro.au
@@ -4350,7 +4349,7 @@ contains
        IF (RBRD < 1.) THEN
           ZBD = SQRT (ZRX0**2 + TXAREA / PI)
           PRM_TD(3) = 200. / ZBD**3       ! 1.0E9 * MU / (2 * PI) = 200. (nT)
-         ! CALL PRINT_DCPRM_TD_VARS(XRX0,YRX0,ZRX0,TXCLN0,TXAREA,PRM_TD)
+         ! CALL DUMP_DCPRM_TD_VARS(XRX0,YRX0,ZRX0,TXCLN0,TXAREA,PRM_TD)
 
           RETURN
        END IF
@@ -4377,7 +4376,7 @@ contains
     PRM_TD(2) = TRANS
     PRM_TD(3) = VERT
 
-!CALL PRINT_DCPRM_TD_VARS(XRX0,YRX0,ZRX0,TXCLN0,TXAREA,PRM_TD)
+!CALL DUMP_DCPRM_TD_VARS(XRX0,YRX0,ZRX0,TXCLN0,TXAREA,PRM_TD)
 
   END SUBROUTINE DCPRM_TD
 
@@ -4563,7 +4562,7 @@ contains
        END IF
     END DO
 
-!CALL PRINT_HSBOSS_TD_VARS (STEP,IDER,NSX,SWX,SWY,NPULS,PULSE,NTYPLS,NTYRP,TRP,NCHNL,TOPN, &
+!CALL DUMP_HSBOSS_TD_VARS (STEP,IDER,NSX,SWX,SWY,NPULS,PULSE,NTYPLS,NTYRP,TRP,NCHNL,TOPN, &
 !       TCLS,TXCLN,NSTAT,SZ,ZRX,XRX,YRX,NLYR,RES,REPS,RMU,THK, &
 !       CALF,CTAU,CFREQ,GSTRP,ASTRP,BTD)
 
@@ -5352,7 +5351,7 @@ contains
 
     PRM_TD = PKSX * PRM_TD
 
-!CALL PRINT_SET_SOURCE_VARS (STEP,ISW,BFFAC,WAVEFORM,NSX,SWX,SWY,PRM_TD)
+!CALL DUMP_SET_SOURCE_VARS (STEP,ISW,BFFAC,WAVEFORM,NSX,SWX,SWY,PRM_TD)
 
 
   END SUBROUTINE SET_SOURCE
@@ -6750,7 +6749,7 @@ contains
           !WRITE(NW,3)
           WRITE(*,3)
           leroiair_failure_count=leroiair_failure_count+1
-          CALL PRINT_FAILED_MODEL (NLYR,RES,THK,CALF,CTAU,CFREQ,RMU,REPS,NPLT,PLNGTH,PLWDTH, &
+          CALL DUMP_FAILED_MODEL (NLYR,RES,THK,CALF,CTAU,CFREQ,RMU,REPS,NPLT,PLNGTH,PLWDTH, &
                SIG_T,CALFP,CTAUP,CFREQP,XCNTR,YCNTR,PLTOP,PLAZM,PLDIP)
           RETURN
        END IF
@@ -6792,7 +6791,7 @@ contains
          /T3,'COMPUTATION HALTED.  SEEK HELP.  (art.raiche@csiro.au)')
 
 
-    ! CALL PRINT_LEROI_3D_VARS (TDFD,NFRQ,FREQ,NLYR,THK,RES,RMU,REPS,CALF,CTAU,CFREQ,NPLT,MXAB,  &
+    ! CALL DUMP_LEROI_3D_VARS (TDFD,NFRQ,FREQ,NLYR,THK,RES,RMU,REPS,CALF,CTAU,CFREQ,NPLT,MXAB,  &
     !   MXB,NB,NA,DA,DB,XCELL,YCELL,ZCELL,PLTOP,PLWDTH,PLNGTH,XCNTR,YCNTR, &
     !   PLAZM,PLDIP,SIG_T,CALFP,CTAUP,CFREQP,NSTAT,FANGLE,SX,SY,SZ,TXCLN,  &
     !   TXA90,SAME_TX,NRX,NRXST,RX,RY,RZ,BFD_SCAT,leroiair_failure_count)
@@ -12866,7 +12865,7 @@ contains
   END SUBROUTINE WRITE_MISFIT
 
 
-  SUBROUTINE PRINT_FAILED_MODEL (NLYR,RES,THK,CALF,CTAU,CFREQ,RMU,REPS,NPLT,PLNGTH,PLWDTH, &
+  SUBROUTINE DUMP_FAILED_MODEL (NLYR,RES,THK,CALF,CTAU,CFREQ,RMU,REPS,NPLT,PLNGTH,PLWDTH, &
        SIG_T,CALFP,CTAUP,CFREQP,XCNTR,YCNTR,PLTOP,PLAZM,PLDIP)
     !--------------------------------------------------------------------------------------------
 
@@ -12973,7 +12972,7 @@ contains
          /T14,'----   -----      ----')
 24  FORMAT(T3,'Plate',I2,':',F7.2,F8.2,G13.3)
 
-  END SUBROUTINE PRINT_FAILED_MODEL
+  END SUBROUTINE DUMP_FAILED_MODEL
 
 
   !==============================================================================
