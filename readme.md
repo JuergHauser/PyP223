@@ -1,6 +1,6 @@
 # PyP223
 
-The P223F software suite (Raiche et al.2007) is an extensive collection of tools for EM forward modelling an inversion, that in te past has been amd avialbe here https://p223suite.sourceforge.net/
+The P223F software suite (Raiche et al.2007) is an extensive collection of tools for EM forward modelling an inversion, that in the past has been made availablee here https://p223suite.sourceforge.net/
 
 This repository contains ctypes based Python wrappers for the variant of LeroiAir employed in Hauser et al. 2016, specfically the relevant subset of the functions in libp223 that is built as part of wiglaf and used solve the forward problem. Thus the files, in pyp223/p223 are overwritten whenever there is an update to https://gitlab.com/jrh/wiglaf. 
 
@@ -17,7 +17,7 @@ formod_tempest_data(nlyr,nstat,...)
 formod_vtem_max_data(nlyr,nstat,...)
 ```
 
-See `demos/verification` for the comparisons between  results obtained with the functions provided here and computation perforemd with LeroiAir.
+See `demos/verification` for the comparisons between  results obtained with the functions provided here and computations perforemd with LeroiAir.
 
 ## Installation
 ```
