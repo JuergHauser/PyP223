@@ -40,14 +40,44 @@ class LeroiAir():
         
         # Call to LeroiAir to comute the forward response and the Jacobian for
         # a thin plate target and a TEMPEST system
-        # nlyr:  number of layers
-        # nstat: number of stations
-        # res:   resistivity vector
-        # pbres: halfspace resistivity
-        # thk: layer thickness vector
+        # nlyr:  Number of layers
+        # nstat: Number of stations
+        # res:   Layer resistivities
+        # pbres: Halfspace resistivity
+        # thk: Layer thicknesses
         # nplt: Number of plates
-        # peast: 
-                
+        # peast: Easting of the plate reference point
+        # pnorth: Northing of the plate reference point
+        # pres: Plate resistivity
+        # plnght1: Plate length in the positive direction using a right-hand rule
+        # plnght2: Plate length in the negate direction using a right-hand rule
+        # pwdith1: Plate width in the positive direction using a right-hand rule
+        # pwdith2: Plate width in the negate direction using a right-hand rule
+        # pthk: Plate thickness
+        # cellw: Cell size used to discreties the thin plate
+        # pdzm: Plate dip azimuth
+        # pdip: Plate dip
+        # plng: Plate plunge
+        # ncmp: Number of components
+        # cmp: Component selection integer
+        # nhcnl: Number of channels/gates
+        # topn: Gate start/opening time
+        # tcls: Gate closing time
+        # nstat: Number of stations/fiducials
+        # tx: Transmitter easting
+        # ty: Transmitter northing
+        # tz: Transmitter elevation
+        # tazi: Transmitter azimuth
+        # tincl: Tranmitter inclination
+        # rx_: Receiver easting
+        # ry_: Receiver northing
+        # rz_: Receiver elevation
+        # trdx_: Transmiter receiver separation where trd(x,y,z) from a right handed coordinate sytem in azimuth direction
+        # trdy: Transmiter receiver separation where trd(x,y,z) from a right handed coordinate sytem in azimuth direction
+        # trdz: Transmiter receiver separation where trd(x,y,z) from a right handed coordinate sytem in azimuth direction
+        # xmodl: Model response
+        # leroiair_failure_count: keeping track of instances of LeroiAir failing
+      
         nlyr_=ctypes.c_int(nlyr)
         res_=numpy.asfortranarray(res,dtype=numpy.float32)
         pbres_=ctypes.c_float(pbres)

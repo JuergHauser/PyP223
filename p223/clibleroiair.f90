@@ -1,6 +1,6 @@
 !
 ! https://gitlab.com/jrh/wiglaf
-!  murchison-59-g41547587c2d-dirty
+!  223682f7c3b-dirty
 !
 ! external/p223/clibleroiair.f90
 !
