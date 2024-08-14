@@ -1,6 +1,6 @@
 # PyP223
 
-The P223F software suite (Raiche et al.2007) is an extensive collection of tools for EM forward modelling and inversion, that in the past has been made available on a website maintained by AMIRA. While the original site no longer exists it and the related files have been captured by the wayback machine and are available [here](https://web.archive.org/web/20160313045828/http://amirainternational.com/web/site.asp?page=projectpages/p223f_software&section=news)
+The P223F software suite (Raiche et al.2007) is an extensive collection of tools for EM forward modelling and inversion, that in the past has been made available on a website maintained by AMIRA. While the original site no longer exists, it and the related files have been captured by the wayback machine and are available [here](https://web.archive.org/web/20160313045828/http://amirainternational.com/web/site.asp?page=projectpages/p223f_software&section=news)
 
 This repository contains ctypes based Python wrappers for the variant of LeroiAir employed in Hauser et al. (2016), specfically the relevant subset of the functions in libp223 that is built as part of wiglaf and used solve the forward problem. Thus the files, in pyp223/p223 are currently overwritten whenever there is an update to https://gitlab.com/jrh/wiglaf. 
 
@@ -9,7 +9,7 @@ The version of LeroiAir in wiglaf is subtly different from previously released v
 - There is a functional interface to forward model specific systems
 - Plates are parametrised differently, see Hauser et. al (2016) 
 
-Currently the Python API provides two functions to model the response of a Tempest and VTemMax system to a thin plate in the halfspace of a layered
+Currently the Python API provides two functions to model the response of a Tempest and VTEM max system to a thin plate in the halfspace of a layered
 earth. It would be straightforward to expose the functions in `p223/clibleroiair.f90` for the other systems by adding the necessary python code in `/src/pyp223/_pyp223.py`.
 
 ```
