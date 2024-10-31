@@ -2,22 +2,22 @@
 
 The P223F software suite (Raiche et al.2007) is an extensive collection of tools for EM forward modelling and inversion, that in the past has been made available on a website maintained by AMIRA. While the original site no longer exists, it and the related files have been captured by the wayback machine and are available [here](https://web.archive.org/web/20160313045828/http://amirainternational.com/web/site.asp?page=projectpages/p223f_software&section=news)
 
-This repository contains ctypes based Python wrappers for the variant of LeroiAir employed in Hauser et al. (2016), specfically the relevant subset of the functions/files from libp223 that is built as part of wiglaf and used solve the forward problem. Thus the files, in pyp223/p223 are currently overwritten whenever there is an update to [wiglaf](https://gitlab.com/jrh/wiglaf). 
+This repository contains ctypes based Python wrappers for the variant of LeroiAir employed in Hauser et al. (2016), specfically the relevant subset of the functions/files from libp223 that is built as part of wiglaf and used solve to the forward problems. Thus the files, in pyp223/p223 are currently overwritten whenever there is an update to [wiglaf](https://gitlab.com/jrh/wiglaf). 
 
-The version of LeroiAir in wiglaf is subtly different from previously released versions:
-- The code-base has been re-modularised to avoid name clashes in libp223 with other P223F subroutines/programs
+The version of LeroiAir in libp223 that is part of wiglsf subtly different from the Version provided by P223F.
+- The code-base has been re-modularised to avoid name clashes in libp223 which includes other P223F functions from Airbeo, Beowulf and Leroi.
 - There is a functional interface to forward model specific systems
 - Plates are parametrised differently, see Hauser et. al (2016) 
 
 Currently the Python API provides two functions to model the response of a Tempest and VTEM max system to a thin plate in the halfspace of a layered
-earth. It would be straightforward to expose the functions in `p223/clibleroiair.f90` for the other systems by adding the necessary python code in `/src/pyp223/_pyp223.py`. 
+earth. It would be straightforward to expose the functions in `p223/clibleroiair.f90` and more broadly wiglqgs libp223 for other systems by adding the necessary python code in `/src/pyp223/_pyp223.py`. 
 
 ```
 formod_tempest_data(nlyr,nstat,...)
 formod_vtem_max_data(nlyr,nstat,...)
 ```
 
-See `demos/verification` for the comparisons between results obtained with the functions provided here and computations performed with LeroiAir from P223F. An example for how can be used for the inversion of VTEM max data using [CoFI](https://inlab.au/cofi/) is given [here](https://github.com/inlab-geo/cofi-examples/blob/main/tutorials/thin_plate_inversion/thin_plate_inversion.ipynb).
+See `demos/verification` for the comparisons between results obtained with the functions provided here and computations performed with LeroiAir from P223F. An example for how the Python wrappers can be used for the inversion of VTEM max data using [CoFI](https://inlab.au/cofi/) is given [here](https://github.com/inlab-geo/cofi-examples/blob/main/tutorials/thin_plate_inversion/thin_plate_inversion.ipynb).
 
 
 ## Installation
