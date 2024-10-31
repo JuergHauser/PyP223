@@ -12,14 +12,13 @@ The version of LeroiAir in wiglaf is subtly different from previously released v
 Currently the Python API provides two functions to model the response of a Tempest and VTEM max system to a thin plate in the halfspace of a layered
 earth. It would be straightforward to expose the functions in `p223/clibleroiair.f90` for the other systems by adding the necessary python code in `/src/pyp223/_pyp223.py`. 
 
-An example for how they enable the inversion of  VTEM max data using [CoFI](https://inlab.au/cofi/) is given [here](https://github.com/inlab-geo/cofi-examples/blob/main/tutorials/thin_plate_inversion/thin_plate_inversion.ipynb)
-
 ```
 formod_tempest_data(nlyr,nstat,...)
 formod_vtem_max_data(nlyr,nstat,...)
 ```
 
-See `demos/verification` for the comparisons between results obtained with the functions provided here and computations performed with LeroiAir from P223F.
+See `demos/verification` for the comparisons between results obtained with the functions provided here and computations performed with LeroiAir from P223F. An example for how can be used for the inversion of VTEM max data using [CoFI](https://inlab.au/cofi/) is given [here](https://github.com/inlab-geo/cofi-examples/blob/main/tutorials/thin_plate_inversion/thin_plate_inversion.ipynb)
+
 
 ## Installation
 ```
