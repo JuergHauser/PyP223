@@ -4,8 +4,8 @@ The P223F software suite (Raiche et al.2007) is an extensive collection of tools
 
 This repository contains ctypes based Python wrappers for the variant of LeroiAir employed in Hauser et al. (2016), specfically the relevant subset of the functions/files from libp223 that is built as part of wiglaf and used solve to the forward problems. Thus the files, in pyp223/p223 are currently overwritten whenever there is an update to [wiglaf](https://gitlab.com/jrh/wiglaf). 
 
-The version of LeroiAir in libp223 that is part of wiglsf subtly different from the Version provided by P223F.
-- The code-base has been re-modularised to avoid name clashes in libp223 which includes other P223F functions from Airbeo, Beowulf and Leroi.
+The version of LeroiAir in libp223 that is part of wiglaf is subtly different from the Version provided by P223F.
+- The code-base has been re-modularised to avoid name clashes in libp223 which includes other P223F functionality from Airbeo, Beowulf and Leroi.
 - There is a functional interface to forward model specific systems
 - Plates are parametrised differently, see Hauser et. al (2016) 
 
