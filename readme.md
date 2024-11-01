@@ -18,6 +18,7 @@ formod_vtem_max_data(nlyr,nstat,...)
 ```
 
 See `demos/verification` for the comparisons between results obtained with the functions provided here and computations performed with LeroiAir from P223F. 
+
 An example for how the Python wrappers can be used for the inversion of VTEM max data using [CoFI](https://inlab.au/cofi/) is given [here](https://github.com/inlab-geo/cofi-examples/blob/main/tutorials/thin_plate_inversion/thin_plate_inversion.ipynb).
 
 
