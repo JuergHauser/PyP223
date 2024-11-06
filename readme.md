@@ -10,7 +10,7 @@ The version of LeroiAir in libp223 that is part of wiglaf is subtly different fr
 - Plates are parametrised differently, see Hauser et. al (2016) 
 
 Currently the Python API provides two functions to model the response of a Tempest and VTEM max system to a thin plate in the halfspace of a layered
-earth. It would be straightforward to expose the functions in `p223/clibleroiair.f90` and more broadly wiglqgs libp223 for other systems by adding the necessary python code in `/src/pyp223/_pyp223.py`. 
+earth. It would be straightforward to expose the functions in `p223/clibleroiair.f90` and more broadly wiglafs libp223 for other systems by adding the necessary python code in `/src/pyp223/_pyp223.py`. 
 
 ```
 formod_tempest_data(nlyr,nstat,...)
