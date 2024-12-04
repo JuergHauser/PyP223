@@ -8,7 +8,7 @@ Several repositories exist that provide variants of P223F, seeking to re-enable 
 
 [https://github.com/KoBoldMetals/P223_Public](https://github.com/KoBoldMetals/P223_Public)
 
-They all appear to adhere to the orignal philosophy, that is read one several input files from disk and then write the results to one or several output files.
+They all appear to adhere to the orignal philosophy, that is read one or several input files from disk and then write the results to one or several output files.
 
 This repository contains ctypes based Python wrappers for the variant of LeroiAir employed in Hauser et al. (2016), specfically the relevant subset of the functions/files from libp223 that is built as part of wiglaf and used solve to the forward problems. Thus the files, in pyp223/p223 are currently overwritten whenever there is an update to [wiglaf](https://gitlab.com/jrh/wiglaf). 
 
