@@ -3,10 +3,8 @@
 The P223F software suite (Raiche et al.2007) is an extensive collection of tools for EM forward modelling and inversion, that in the past has been made available on a website maintained by AMIRA. While the original site no longer exists, it and the related files have been captured by the wayback machine and are available [here](https://web.archive.org/web/20160313045828/http://amirainternational.com/web/site.asp?page=projectpages/p223f_software&section=news)
 
 Several repositories exist that provide variants of P223F, seeking to re-enable features originally disabled by Art Raiche, providing a build system etc...
-
-[https://github.com/dwannetts/P223_Public](https://github.com/dwannetts/P223_Public)
-
-[https://github.com/KoBoldMetals/P223_Public](https://github.com/KoBoldMetals/P223_Public)
+- [https://github.com/dwannetts/P223_Public](https://github.com/dwannetts/P223_Public)
+- [https://github.com/KoBoldMetals/P223_Public](https://github.com/KoBoldMetals/P223_Public)
 
 They all appear to adhere to the orignal philosophy, that is read one or several input files from disk and then write the results to one or several output files.
 
