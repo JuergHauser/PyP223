@@ -27,6 +27,13 @@ An example for how the Python wrappers can be used for the inversion of VTEM max
 
 
 ## Installation
+
+Directly from github
+```
+pip install git+https://github.com/JuergHauser/PyP223.git
+```
+
+From a clone of this repository
 ```
 git clone https://github.com/JuergHauser/PyP223.git
 cd PyP223
