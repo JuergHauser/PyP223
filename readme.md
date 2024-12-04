@@ -2,6 +2,15 @@
 
 The P223F software suite (Raiche et al.2007) is an extensive collection of tools for EM forward modelling and inversion, that in the past has been made available on a website maintained by AMIRA. While the original site no longer exists, it and the related files have been captured by the wayback machine and are available [here](https://web.archive.org/web/20160313045828/http://amirainternational.com/web/site.asp?page=projectpages/p223f_software&section=news)
 
+Several repositories exisz that provide variants of P223F.
+
+[https://github.com/dwannetts/P223_Publ[](https://github.com/dwannetts/P223_Public)
+
+(https://github.com/KoBoldMetals/P223_Public)[https://github.com/KoBoldMetals/P223_Public]
+
+
+
+
 This repository contains ctypes based Python wrappers for the variant of LeroiAir employed in Hauser et al. (2016), specfically the relevant subset of the functions/files from libp223 that is built as part of wiglaf and used solve to the forward problems. Thus the files, in pyp223/p223 are currently overwritten whenever there is an update to [wiglaf](https://gitlab.com/jrh/wiglaf). 
 
 The version of LeroiAir in libp223 that is part of wiglaf is subtly different from the Version provided by P223F.
