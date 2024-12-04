@@ -4,7 +4,7 @@ The P223F software suite (Raiche et al.2007) is an extensive collection of tools
 
 Several repositories exisz that provide variants of P223F.
 
-[https://github.com/dwannetts/P223_Publ[](https://github.com/dwannetts/P223_Public)
+[https://github.com/dwannetts/P223_Public](https://github.com/dwannetts/P223_Public)
 
 (https://github.com/KoBoldMetals/P223_Public)[https://github.com/KoBoldMetals/P223_Public]
 
